@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: pv-1
+spec:
+  capacity:
+          storage: 2Gi
+  accessModes: 
+    - ReadWriteOnce
+  hostPath:
+    path: /temp/k8s
+
+#Persistent volume Claim manifest file 
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+        name: pvc-1
+spec: 
+  accessModes:
+          - ReadWriteOnce
+  resources:
+    requests:
+            storage: 2Gi
