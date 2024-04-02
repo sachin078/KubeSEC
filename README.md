@@ -109,7 +109,7 @@ Have Fun!!
 
 #Mod Security Setup 
 
-<img src="https://github.com/owasp-modsecurity/ModSecurity/raw/v3/master/others/modsec.png](https://github.com/sachin078/KubeSEC/blob/1da4d219014c4f6f335c334b9320edff5e9edbb2/modsec.png" width="50%">
+<img src="modsec.png" width="50%">
 
 Libmodsecurity is one component of the ModSecurity v3 project. The library
 codebase serves as an interface to ModSecurity Connectors taking in web traffic
@@ -256,117 +256,12 @@ int main (int argc, char **argv)
 
 ```
 
-# Contributing
-
-You are more than welcome to contribute to this project and look forward to growing the community around this new version of ModSecurity. Areas of interest include: New
-functionalities, fixes, bug report, support for beginning users, or anything that you
-are willing to help with.
-
-## Providing patches
-
-We prefer to have your patch within the GitHub infrastructure to facilitate our
-review work, and our Q.A. integration. GitHub provides excellent
-documentation on how to perform “Pull Requests”, more information available
-here: https://help.github.com/articles/using-pull-requests/
-
-Please respect the coding style. Pull requests can include various commits, so
-provide one fix or one piece of functionality per commit. Please do not change anything outside
-the scope of your target work (e.g. coding style in a function that you have
-passed by). For further information about the coding style used in this
-project, please check: https://www.chromium.org/blink/coding-style
-
-Provides explanative commit messages. Your first line should  give the highlights of your
-patch, 3rd and on give a more detailed explanation/technical details about your
-patch. Patch explanation is valuable during the review process.
-
-### Don’t know where to start?
-
-Within our code there are various items marked as TODO or FIXME that may need
-your attention. Check the list of items by performing a grep:
+ Check the list of items by performing a grep:
 
 ```
 $ cd /path/to/modsecurity-nginx
 $ egrep -Rin "TODO|FIXME" -R *
 ```
-
-A TODO list is also available as part of the Doxygen documentation.
-
-### Testing your patch
-
-Along with the manual testing, we strongly recommend you to use the our
-regression tests and unit tests. If you have implemented an operator, don’t
-forget to create unit tests for it. If you implement anything else, it is encouraged that you develop complimentary regression tests for it.
-
-The regression test and unit test utilities are native and do not demand any
-external tool or script, although you need to fetch the test cases from other
-repositories, as they are shared with other versions of ModSecurity, those
-others repositories git submodules. To fetch the submodules repository and run
-the utilities, follow the commands listed below:
-
-```shell
-$ cd /path/to/your/ModSecurity
-$ git submodule foreach git pull
-$ cd test
-$ ./regression-tests
-$ ./unit-tests
- ```
-
-### Debugging
-
-
-Before start the debugging process, make sure of where your bug is. The problem
-could be on your connector or in libmodsecurity. In order to identify where the
-bug is, it is recommended that you develop a regression test that mimics the
-scenario where the bug is happening. If the bug is reproducible with the
-regression-test utility, then it will be far simpler to debug and ensure that it never occurs again. On Linux it is
-recommended that anyone undertaking debugging utilize gdb and/or valgrind as needed.
-
-During the configuration/compilation time, you may want to disable the compiler
-optimization making your “back traces” populated with readable data. Use the
-CFLAGS to disable the compilation optimization parameters:
-
-```shell
-$ export CFLAGS="-g -O0"
-$ ./build.sh
-$ ./configure
-$ make
-$ sudo make install
-```
-
-
-## Reporting Issues
-
-If you are facing a configuration issue or something is not working as you
-expected to be, please use the ModSecurity user’s mailing list. Issues on GitHub
-are also welcomed, but we prefer to have user ask questions on the mailing list first so that you can reach an entire community. Also don’t forget to look for existing issues before open a new one.
-
-If you are going to open a new issue on GitHub, don’t forget to tell us the
-version of your libmodsecurity and the version of a specific connector if there
-is one.
-
-
-### Security issue
-
-Please do not make public any security issue. Contact us at:
-modsecurity@owasp.org reporting the issue. Once the problem is fixed your
-credit will be given.
-
-## Feature request
-
-We are open to discussing any new feature request with the community via the mailing lists. You can alternativly,
-feel free to open GitHub issues requesting new features. Before opening a
-new issue, please check if there is one already opened on the same topic.
-
-## Bindings
-
-The libModSecurity design allows the integration with bindings. There is an effort to avoid breaking API [binary] compatibility to make an easy integration with possible bindings. Currently, there are two notable projects maintained by the community:
-   * Python - https://github.com/actions-security/pymodsecurity
-   * Varnish - https://github.com/xdecock/vmod-modsecurity
-
-## Packaging
-
-Having our packages in distros on time is a desire that we have, so let us know
-if there is anything we can do to facilitate your work as a packager.
 
 
 
