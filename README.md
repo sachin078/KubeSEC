@@ -1,6 +1,9 @@
 # KubeSEC
 
 # Install Kubernetes Cluster using kubeadm
+
+<img src="Kubernetes.png" width="50%">
+
 Follow this documentation to set up a Kubernetes cluster on __Ubuntu 20.04 LTS__.
 
 This documentation guides you in setting up a cluster with one master node and one worker node.
